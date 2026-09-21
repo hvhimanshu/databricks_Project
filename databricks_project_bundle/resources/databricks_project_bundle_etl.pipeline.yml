@@ -3,7 +3,7 @@
 resources:
   pipelines:
     databricks_project_bundle_etl:
-      name: bronze_silver
+      name: bronze_silver_Prod
       configuration:
         catalog_name: ${var.catalog}
       libraries:
