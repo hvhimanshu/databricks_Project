@@ -1,0 +1,19 @@
+# The main pipeline for databricks_project_bundle
+
+resources:
+  pipelines:
+    databricks_project_bundle_etl:
+      name: bronze_silver
+      configuration:
+        catalog_name: ${var.catalog}
+      libraries:
+        - glob:
+            include: ../src/DLT_piplines/bronze_silver/transformations/**
+      schema: silver
+      photon: true
+      channel: CURRENT
+      catalog: ${var.catalog}
+      serverless: true
+      root_path: ../src/DLT_piplines/bronze_silver
+
+
